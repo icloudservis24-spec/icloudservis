@@ -1,155 +1,140 @@
 <!DOCTYPE html>
 <html lang="ka">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ტელეფონების პროგრამირება / კოდის მოხსნა</title>
-<style>
-body {
-background-color: #0b131a;
-color: #ffffff;
-font-family: Arial, Helvetica, sans-serif;
-display: flex;
-justify-content: center;
-align-items: center;
-margin: 0;
-padding: 20px;
-min-height: 100vh;
-box-sizing: border-box;
-}
-
-.container {
-max-width: 420px;
-width: 100%;
-text-align: center;
-}
-
-.logo-box {
-background-color: #111e2e;
-padding: 8px 15px;
-border-radius: 20px;
-display: inline-block;
-color: #00ff88;
-font-size: 14px;
-font-weight: bold;
-margin-bottom: 20px;
-}
-
-.main-title {
-font-size: 24px;
-line-height: 1.4;
-margin-bottom: 30px;
-font-weight: bold;
-}
-
-.buttons-container {
-display: flex;
-flex-direction: column;
-gap: 15px;
-margin-bottom: 35px;
-}
-
-.btn {
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 16px;
-border-radius: 30px;
-text-decoration: none;
-color: white;
-font-weight: bold;
-font-size: 16px;
-transition: 0.2s;
-}
-
-.btn:active {
-transform: scale(0.98);
-}
-
-.whatsapp {
-background-color: #25D366;
-}
-
-.phone {
-background-color: #16222f;
-border: 1px solid #2a3a4a;
-}
-
-.facebook {
-background-color: #1877F2;
-}
-
-.services-card {
-background-color: #111e2e;
-padding: 25px 20px;
-border-radius: 20px;
-text-align: left;
-box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.services-card h2 {
-font-size: 18px;
-margin-top: 0;
-margin-bottom: 20px;
-border-bottom: 1px solid #2a3a4a;
-padding-bottom: 10px;
-color: #a0aec0;
-}
-
-.services-list {
-list-style: none;
-padding: 0;
-margin: 0;
-}
-
-.services-list li {
-margin-bottom: 15px;
-font-size: 15px;
-display: flex;
-align-items: center;
-gap: 10px;
-}
-
-.dot {
-color: #00ff88;
-font-size: 18px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ტელეფონების პროგრამირება / კოდის მოხსნა</title>
+    <style>
+        body {
+            background-color: #0b131a;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #121d28;
+            border-radius: 16px;
+            padding: 30px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+        }
+        .badge {
+            background-color: rgba(0, 184, 148, 0.15);
+            color: #00b894;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            border-radius: 25px;
+            margin-bottom: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: transform 0.2s;
+        }
+        .btn:active {
+            transform: scale(0.98);
+        }
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+        .btn-phone {
+            background-color: #1e2d3b;
+            color: #ffffff;
+            border: 1px solid #2c3e50;
+        }
+        .btn-facebook {
+            background-color: #1877F2;
+            color: white;
+        }
+        .btn i {
+            margin-right: 10px;
+        }
+        .services-card {
+            background-color: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: left;
+            margin-top: 30px;
+        }
+        .services-card h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #a4b0be;
+            font-size: 18px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+        .services-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .services-list li {
+            margin-bottom: 12px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .services-list li::before {
+            content: "●";
+            color: #00b894;
+            font-size: 12px;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
 
 <div class="container">
-<div class="logo-box">🔒 სანდო სერვისი საქართველოში</div>
-
-<h1 class="main-title">მობილური ტელეფონების პროგრამირება - კოდის მოხსნა</h1>
-
-<div class="buttons-container">
-
-<a href="https://wa.me/995568955771 target="_blank" class="btn whatsapp">
-💬 WhatsApp-ზე მიწერა
-</a>
-
-<a href="tel:+995568955771" class="btn phone">
-📞 +995 5xx xx xx xx
-</a>
-
-<a href="https://facebook.com/შენი_გვერდი" target="_blank" class="btn facebook">
-👤 Facebook-ზე გადასვლა
-</a>
-
-</div>
-
-<div class="services-card">
-<h2>ჩვენი სერვისები</h2>
-<ul class="services-list">
-<li><span class="dot">●</span> ქსელის კოდის მოხსნა (Unlock)</li>
-<li><span class="dot">●</span> Google Account (FRP) მოხსნა</li>
-<li><span class="dot">●</span> Mi Account მოხსნა (Unlock)</li>
-<li><span class="dot">●</span> Infinix - Tecno რეგიონ კოდის მოხსნა</li>
-<li><span class="dot">●</span> Realme რეგიონ კოდის მოხსნა</li>
-<li><span class="dot">●</span> ნებისმიერი პროგრამული ხარვეზის აღმოფხვრა</li>
-</ul>
-</div>
+    <div class="badge">🔒 სანდო სერვისი საქართველოში</div>
+    
+    <h1>მობილური ტელეფონების პროგრამირება - კოდის მოხსნა</h1>
+    
+    <a href="https://wa.me/995568955771" class="btn btn-whatsapp">
+        💬 WhatsApp-ზე მიწერა
+    </a>
+    
+    <a href="tel:+995568955771" class="btn btn-phone">
+        📞 +995 568 95 57 71
+    </a>
+    
+    <a href="https://www.facebook.com/share/18RDHS1qbU/" target="_blank" class="btn btn-facebook">
+        👤 Facebook-ზე გადასვლა
+    </a>
+    
+    <div class="services-card">
+        <h3>ჩვენი სერვისები</h3>
+        <ul class="services-list">
+            <li>ქსელის კოდის მოხსნა (Unlock)</li>
+            <li>Google Account (FRP) მოხსნა</li>
+            <li>Mi Account მოხსნა (Unlock)</li>
+            <li>Infinix - Tecno რეგიონ კოდის მოხსნა</li>
+            <li>პროგრამული განახლება / აღდგენა</li>
+        </ul>
+    </div>
 </div>
 
 </body>
